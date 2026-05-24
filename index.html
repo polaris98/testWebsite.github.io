@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alex Rivera — VFX Portfolio</title>
+<title>Carolina Proietti — VFX Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
 <style>
@@ -13,10 +13,10 @@
     --bg: #7E212A;
     --surface: #8f2530;
     --surface2: #a02a36;
-    --border: rgba(255,255,255,0.08);
-    --border2: rgba(255,255,255,0.14);
-    --text: #e8e6e0;
-    --muted: #7a7870;
+    --border: rgba(239,224,205,0.08);
+    --border2: rgba(239,224,205,0.14);
+    --text: #EFE0CD;
+    --muted: #c4a98a;
     --accent: #40c060;
     --accent2: #c03030;
     --font-display: 'Fraunces', Georgia, serif;
@@ -46,27 +46,25 @@
 
   /* NAV */
   nav {
-    position: sticky; top: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 32px;
-    border-bottom: 1px solid var(--border);
-    background: rgba(126,33,42,0.88);
-    backdrop-filter: blur(12px);
+    position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 100;
+    display: flex; align-items: center; gap: 8px;
+    padding: 0;
+    border: none;
+    background: transparent;
   }
-  .logo {
-    font-family: var(--font-display);
-    font-size: 20px; font-weight: 300;
-    color: var(--text);
-    text-decoration: none;
-  }
+  .logo { display: none; }
   .logo em { font-style: italic; color: var(--accent); }
-  nav ul { list-style: none; display: flex; gap: 24px; }
+  nav ul { list-style: none; display: flex; gap: 8px; }
   nav a {
-    color: var(--muted); text-decoration: none;
+    color: #EFE0CD; text-decoration: none;
     font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 7px 16px;
+    border: none;
+    border-radius: 2px;
+    background: transparent;
     transition: color 0.2s;
   }
-  nav a:hover { color: var(--text); }
+  nav a:hover { color: rgba(239,224,205,0.6); }
   .nav-cta {
     font-family: var(--font-mono);
     font-size: 11px; letter-spacing: 0.08em;
@@ -162,7 +160,7 @@
   }
   .play-ring {
     width: 72px; height: 72px;
-    border: 1.5px solid rgba(255,255,255,0.4);
+    border: 1.5px solid rgba(239,224,205,0.4);
     border-radius: 50%; margin: 0 auto 16px;
     display: flex; align-items: center; justify-content: center;
     transition: transform 0.3s, border-color 0.3s;
@@ -173,7 +171,7 @@
   }
   .play-ring svg { margin-left: 5px; }
   .reel-label {
-    font-size: 11px; color: rgba(255,255,255,0.5);
+    font-size: 11px; color: rgba(239,224,205,0.5);
     letter-spacing: 0.1em; text-transform: uppercase;
   }
   .reel-caption {
@@ -233,7 +231,7 @@
     font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
     padding: 3px 8px;
     background: rgba(0,0,0,0.6); border-radius: 2px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(239,224,205,0.5);
   }
   .ba-before .ba-label { left: 10px; }
   .ba-after .ba-label { right: 10px; }
@@ -244,7 +242,7 @@
   .divider-line {
     position: absolute; top: 0; bottom: 0;
     left: 50%; width: 1px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(239,224,205,0.2);
     z-index: 5;
   }
   .divider-handle {
@@ -252,10 +250,10 @@
     transform: translate(-50%, -50%);
     width: 24px; height: 24px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(239,224,205,0.15);
+    border: 1px solid rgba(239,224,205,0.4);
     display: flex; align-items: center; justify-content: center;
-    z-index: 6; font-size: 10px; color: rgba(255,255,255,0.7);
+    z-index: 6; font-size: 10px; color: rgba(239,224,205,0.6);
   }
 
   .breakdown-info {
@@ -401,7 +399,7 @@
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
-    nav ul { display: none; }
+    nav ul { list-style: none; display: flex; gap: 8px; }
     .hero { padding: 48px 20px 40px; }
     .reel-section, .section, .contact-section { padding-left: 20px; padding-right: 20px; }
     .breakdown-card { grid-template-columns: 1fr; }
@@ -427,9 +425,9 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow fade-in">VFX Compositor & FX Artist</div>
+  <div class="hero-eyebrow fade-in">VFX Portfolio</div>
   <h1 class="fade-in delay-1">
-    Crafting<br><em>invisible</em><br>worlds
+    Carolina <br> Proietti<br><em>FX artist</em><br>
   </h1>
   <p class="hero-desc fade-in delay-2">
     8 years compositing visual effects for feature films, streaming series and commercials.
@@ -457,7 +455,7 @@
     <div class="reel-center">
       <div class="play-ring">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <polygon points="8,5 20,12 8,19" fill="rgba(255,255,255,0.85)"/>
+          <polygon points="8,5 20,12 8,19" fill="rgba(239,224,205,0.85)"/>
         </svg>
       </div>
       <div class="reel-label">Demo Reel 2025 — 2:14</div>
@@ -524,7 +522,7 @@
           <rect x="96" y="70" width="8" height="8" fill="#2a2820"/>
           <rect x="80" y="85" width="8" height="8" fill="#2a2820"/>
           <!-- Plate label -->
-          <text x="10" y="20" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.25)" letter-spacing="1">PLATE</text>
+          <text x="10" y="20" font-family="monospace" font-size="9" fill="rgba(239,224,205,0.25)" letter-spacing="1">PLATE</text>
         </svg>
         <div class="ba-label">Before</div>
       </div>
@@ -606,7 +604,7 @@
           <rect x="120" y="100" width="60" height="60" fill="#a02a36"/>
           <rect x="140" y="80" width="20" height="20" fill="#a02a36"/>
           <!-- Static label -->
-          <text x="10" y="20" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.25)" letter-spacing="1">PLATE</text>
+          <text x="10" y="20" font-family="monospace" font-size="9" fill="rgba(239,224,205,0.25)" letter-spacing="1">PLATE</text>
         </svg>
         <div class="ba-label">Before</div>
       </div>
@@ -685,7 +683,7 @@
           <!-- Actor silhouette shape -->
           <ellipse cx="150" cy="110" rx="18" ry="22" fill="#7E212A"/>
           <rect x="136" y="130" width="28" height="50" fill="#7E212A"/>
-          <text x="10" y="20" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.2)" letter-spacing="1">GREENSCREEN</text>
+          <text x="10" y="20" font-family="monospace" font-size="9" fill="rgba(239,224,205,0.2)" letter-spacing="1">GREENSCREEN</text>
         </svg>
         <div class="ba-label">Before</div>
       </div>
@@ -706,7 +704,7 @@
           <rect width="300" height="220" fill="url(#forestsky)"/>
           <rect width="300" height="220" fill="url(#moonlight)"/>
           <!-- Moon -->
-          <circle cx="210" cy="40" r="14" fill="#d8e8f0" opacity="0.85"/>
+          <circle cx="210" cy="40" r="14" fill="#EFE0CD" opacity="0.85"/>
           <circle cx="205" cy="36" r="10" fill="#7E212A" opacity="0.4"/>
           <!-- Far trees -->
           <rect x="0"  y="100" width="18" height="120" fill="#7E212A" opacity="0.7"/>
@@ -728,7 +726,7 @@
           <ellipse cx="150" cy="110" rx="18" ry="22" fill="#7E212A"/>
           <rect x="136" y="130" width="28" height="50" fill="#7E212A"/>
           <!-- Rim light on actor -->
-          <ellipse cx="150" cy="110" rx="19" ry="23" fill="none" stroke="rgba(180,210,240,0.25)" stroke-width="2"/>
+          <ellipse cx="150" cy="110" rx="19" ry="23" fill="none" stroke="rgba(239,224,205,0.2)" stroke-width="2"/>
           <text x="10" y="20" font-family="monospace" font-size="9" fill="rgba(100,180,255,0.3)" letter-spacing="1">COMP</text>
         </svg>
         <div class="ba-label">After</div>
