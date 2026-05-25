@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carolina Proietti — VFX Portfolio</title>
+<title>Alex Rivera — VFX Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
 <style>
@@ -80,9 +80,11 @@
 
   /* HERO */
   .hero {
-    padding: 80px 32px 60px;
+    padding: 0 32px;
     max-width: 1100px; margin: 0 auto;
     position: relative; z-index: 1;
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
   }
   .hero-eyebrow {
     font-size: 11px; letter-spacing: 0.15em;
@@ -97,20 +99,32 @@
   }
   .hero h1 {
     font-family: var(--font-display);
-    font-size: clamp(48px, 7vw, 88px);
-    font-weight: 300; line-height: 1.05;
+    font-size: clamp(64px, 11vw, 140px);
+    font-weight: 300; line-height: 1.0;
     color: var(--text);
-    margin-bottom: 24px;
+    margin-bottom: 32px;
   }
   .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-eyebrow {
+    font-size: clamp(11px, 1.2vw, 14px); letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block; width: 32px; height: 1px;
+    background: var(--accent);
+  }
   .hero-desc {
-    max-width: 520px;
+    max-width: 620px;
+    font-size: clamp(13px, 1.4vw, 16px);
     color: var(--muted); line-height: 1.8;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
   .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag {
-    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-size: clamp(10px, 1vw, 12px); letter-spacing: 0.1em; text-transform: uppercase;
     padding: 5px 12px;
     border: 1px solid var(--border2);
     border-radius: 2px; color: var(--muted);
@@ -400,7 +414,7 @@
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav ul { list-style: none; display: flex; gap: 8px; }
-    .hero { padding: 48px 20px 40px; }
+    .hero { padding: 0 20px; }
     .reel-section, .section, .contact-section { padding-left: 20px; padding-right: 20px; }
     .breakdown-card { grid-template-columns: 1fr; }
     .breakdown-info { border-left: none; border-top: 1px solid var(--border); }
@@ -425,9 +439,9 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow fade-in">VFX Portfolio</div>
+  <div class="hero-eyebrow fade-in">VFX Compositor & FX Artist</div>
   <h1 class="fade-in delay-1">
-    Carolina <br> Proietti<br><em>FX artist</em><br>
+    Crafting<br><em>invisible</em><br>worlds
   </h1>
   <p class="hero-desc fade-in delay-2">
     8 years compositing visual effects for feature films, streaming series and commercials.
