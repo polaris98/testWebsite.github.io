@@ -71,11 +71,11 @@ nav a:hover { color: rgba(239,224,205,0.6); }
 
 /* HERO */
 .hero {
-  padding: 0 32px;
+  padding: 70px 32px 60px;
   max-width: 1100px; margin: 0 auto;
   position: relative; z-index: 1;
-  min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
+  min-height: calc(100vh - 70px);
 }
 .hero-eyebrow {
   font-size: 11px; letter-spacing: 0.15em;
@@ -90,10 +90,10 @@ nav a:hover { color: rgba(239,224,205,0.6); }
 }
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(64px, 11vw, 140px);
-  font-weight: 300; line-height: 1.0;
+  font-size: clamp(36px, 8vw, 100px);
+  font-weight: 300; line-height: 1.1;
   color: var(--text);
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 .hero h1 em { font-style: italic; color: var(--accent); }
 .hero-eyebrow {
@@ -109,9 +109,9 @@ nav a:hover { color: rgba(239,224,205,0.6); }
 }
 .hero-desc {
   max-width: 620px;
-  font-size: clamp(13px, 1.4vw, 16px);
-  color: var(--muted); line-height: 1.8;
-  margin-bottom: 48px;
+  font-size: clamp(12px, 1.2vw, 14px);
+  color: var(--muted); line-height: 1.6;
+  margin-bottom: 24px;
 }
 .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag {
