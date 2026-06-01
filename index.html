@@ -23,7 +23,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow fade-in">VFX Compositor & FX Artist</div>
+  <div class="hero-eyebrow fade-in">FX Artist</div>
   <h1 class="fade-in delay-1">
     Carolina <br> Proietti<br><em>FX Artist</em>
   </h1>
@@ -41,12 +41,7 @@
 
 <!-- SHOWREEL -->
 <section class="reel-section" id="work">
-  <div class="reel-frame" onclick="alert('In a real portfolio, this opens your Vimeo reel!')">
-    <div class="reel-bg-strips">
-      <div class="strip"></div><div class="strip"></div><div class="strip"></div>
-      <div class="strip"></div><div class="strip"></div><div class="strip"></div>
-      <div class="strip"></div><div class="strip"></div>
-    </div>
+  <div class="reel-frame" onclick="openVimeoPlayer()" style="background-image: url('thumbnail/thumbnail.png');">
     <div class="reel-center">
       <div class="play-ring">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -373,6 +368,16 @@
   <span>Rome, Italy · Available worldwide</span>
 </footer>
 
+<!-- VIMEO PLAYER MODAL -->
+<div id="vimeoModal" class="vimeo-modal" onclick="closeVimeoPlayer(event)">
+  <div class="vimeo-modal-content" onclick="event.stopPropagation()">
+    <button class="vimeo-close" onclick="closeVimeoPlayer()">&times;</button>
+    <div class="vimeo-player-wrapper">
+      <iframe src="https://player.vimeo.com/video/1128634773" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
 <script>
   function filterBreakdowns(type, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -408,6 +413,26 @@
     el.style.transform = 'translateY(24px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
+  });
+
+  // Vimeo player modal functions
+  function openVimeoPlayer() {
+    const modal = document.getElementById('vimeoModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVimeoPlayer(event) {
+    const modal = document.getElementById('vimeoModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeVimeoPlayer();
+    }
   });
 </script>
 
