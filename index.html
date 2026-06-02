@@ -12,13 +12,15 @@
 
 <!-- NAV -->
 <nav>
-  <a class="logo" href="#">Alex <em>Rivera</em></a>
+  <a class="logo" href="#">Carolina <em>Proietti</em></a>
   <ul>
     <li><a href="#work">Reel</a></li>
     <li><a href="#breakdowns">Breakdowns</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#cv">Curriculum</a></li>
+    <li><a href="#me">About me</a></li>
+    <li><a href="#contact" class="nav-contact">Contact</a></li>
   </ul>
-  <button class="nav-cta">Hire me</button>
+  <!-- <button class="nav-cta" href="#contact">Contact</button> -->
 </nav>
 
 <!-- HERO -->
@@ -410,6 +412,52 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeVimeoPlayer();
+    }
+  });
+
+  // Background color fade on scroll
+  function hexToRgb(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+  }
+
+  function rgbToHex(r, g, b) {
+    return '#' + [r, g, b].map(x => {
+      const hex = x.toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    }).join('');
+  }
+
+  function interpolateColor(color1, color2, factor) {
+    const rgb1 = hexToRgb(color1);
+    const rgb2 = hexToRgb(color2);
+    const r = Math.round(rgb1.r + (rgb2.r - rgb1.r) * factor);
+    const g = Math.round(rgb1.g + (rgb2.g - rgb1.g) * factor);
+    const b = Math.round(rgb1.b + (rgb2.b - rgb1.b) * factor);
+    return rgbToHex(r, g, b);
+  }
+
+  window.addEventListener('scroll', () => {
+    const hero = document.querySelector('.hero');
+    const heroBottom = hero.offsetHeight;
+    const scrolled = window.scrollY;
+    
+    // Only start transition after hero section
+    if (scrolled > heroBottom) {
+      const scrollHeight = (document.documentElement.scrollHeight - window.innerHeight);
+      const remainingScroll = scrolled - heroBottom;
+      const remainingScrollHeight = scrollHeight - heroBottom;
+      let scrollPercent = remainingScrollHeight > 0 ? remainingScroll / remainingScrollHeight : 0;
+      // Apply non-linear easing for exaggerated transition
+      scrollPercent = scrollPercent**0.3; // Adjust exponent for more/less dramatic effect
+      const color = interpolateColor('#7E212A', '#EFE0CD', scrollPercent);
+      document.body.style.backgroundColor = color;
+    } else {
+      document.body.style.backgroundColor = '#7E212A';
     }
   });
 </script>

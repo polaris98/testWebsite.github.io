@@ -56,6 +56,17 @@ nav a {
   transition: color 0.2s;
 }
 nav a:hover { color: rgba(239,224,205,0.6); }
+.nav-contact {
+  border: 2px solid var(--accent);
+  border-radius: 20px;
+  padding: 7px 16px;
+  background: var(--accent);
+  color: var(--bg);
+  transition: all 0.2s;
+}
+.nav-contact:hover {
+  opacity: 0.8;
+}
 .nav-cta {
   font-family: var(--font-mono);
   font-size: 11px; letter-spacing: 0.08em;
