@@ -17,7 +17,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  background: var(--text);
   color: var(--text);
   font-family: var(--font-mono);
   font-size: 13px;
@@ -60,12 +60,12 @@ nav a:hover { color: rgba(239,224,205,0.6); }
   border: 2px solid var(--accent);
   border-radius: 20px;
   padding: 7px 16px;
-  background: var(--accent);
-  color: var(--bg);
+  color: var(--accent);
   transition: all 0.2s;
 }
 .nav-contact:hover {
-  opacity: 0.8;
+  background: var(--accent);
+  color: var(--bg);
 }
 .nav-cta {
   font-family: var(--font-mono);
@@ -88,6 +88,13 @@ nav a:hover { color: rgba(239,224,205,0.6); }
   display: flex; flex-direction: column; justify-content: center;
   min-height: calc(100vh - 70px);
 }
+
+.hero-body {
+  background: var(--bg);
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
 .hero-eyebrow {
   font-size: 11px; letter-spacing: 0.15em;
   text-transform: uppercase; color: var(--accent);
