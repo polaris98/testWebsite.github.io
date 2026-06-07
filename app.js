@@ -13,7 +13,7 @@ let flower;
 let mixer;
 const loader = new GLTFLoader();
 
-loader.load('model/blue_flower_animated.glb', function (gltf) {
+loader.load('model/test.glb', function (gltf) {
   console.log('Model loaded successfully:', gltf);
   flower = gltf.scene;
   flower.scale.set(5,5,5);
