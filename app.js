@@ -24,7 +24,7 @@ const scene = new THREE.Scene();
 let flower;
 let mixer;
 const loader = new GLTFLoader();
-loader.load('model/test_FLOWER.glb', function (gltf) {
+loader.load('model/test_FLOWER_static.glb', function (gltf) {
   console.log('Model loaded successfully:', gltf);
   flower = gltf.scene;
   flower.scale.setScalar(flowerScale);
